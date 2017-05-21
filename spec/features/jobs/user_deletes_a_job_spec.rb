@@ -2,9 +2,8 @@ require 'rails_helper'
 
 describe "User deletes a job posting" do
   scenario "user is redirected to company's job listing" do
-    company = Company.create!(name: "ESPN")
-    job1 = company.jobs.create!(title: "Developer", level_of_interest: 70, city: "Denver")
-    job2 = company.jobs.create!(title: "QA Analyst", level_of_interest: 70, city: "New York City")
+    company = create(:company, :with_jobs)
+    job1 = company.jobs.first
 
     visit "companies/#{company.id}/jobs"
     click_on job1.title

@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe "User edits an existing job" do
   scenario "user sees updated job information" do
-    company = Company.create!(name: "ESPN")
-    job = company.jobs.create!(title: "Developer", level_of_interest: 70, city: "Denver")
+    company = create(:company, :with_jobs, job_count: 1)
+    job = company.jobs.first
 
     visit "/companies/#{company.id}/jobs/#{job.id}"
     click_on "Edit"
