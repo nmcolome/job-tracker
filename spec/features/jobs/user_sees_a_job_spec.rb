@@ -20,7 +20,7 @@ describe "User sees a specific job" do
 
     expect(page).to have_content "Post a comment"
     expect(page).to have_content "Your comment:"
-    expect(page).to have_content "Submit Comment"
+    expect(page).to have_button "Submit Comment"
     expect(page).to have_content "Comments"
   end
 end

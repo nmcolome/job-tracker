@@ -1,6 +1,8 @@
 FactoryGirl.define do
   factory :comment do
-    content "strings"
+    sequence :content do |i|
+      "strings #{i}"
+    end
     job
   end
 end
