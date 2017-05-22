@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "User creates a new comment" do
-  scenario "adds new comment in a job page and it sees it below" do
+  scenario "adds new comment in a job page" do
     company = create(:company, :with_jobs)
     job = company.jobs.first
 

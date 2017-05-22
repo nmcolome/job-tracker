@@ -5,3 +5,5 @@ All Jobs for <strong><%= link_to @company.name, company_path(@company) %></stron
 <% end %>
 
 <%= render partial: 'contacts/form' %>
+<h3>Contacts</h3>
+<%= render partial: 'companies/contact', collection: @company.contacts.reverse %>
