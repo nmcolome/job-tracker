@@ -10,4 +10,16 @@ describe "User sees one company" do
     expect(page).to have_content(company.name)
     expect(page).to have_content("Developer")
   end
+
+  scenario "a user sees a form to enter a contact" do
+    company = create(:company)
+
+    visit company_path(company)
+
+    expect(page).to have_content "Add a contact"
+    expect(page).to have_content "Full name"
+    expect(page).to have_content "Position"
+    expect(page).to have_content "Email"
+    expect(page).to have_button "Create Contact"
+  end
 end
